@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-app-aws",
+  "version": "1.0.0",
+  "description": "Node.js application for AWS CI/CD demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
