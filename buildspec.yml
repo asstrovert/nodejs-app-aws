@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Running tests...
+      - npm test
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Packaging application...
+      - mkdir -p node_modules
+      - npm install
+      - zip -r nodejs-app.zip app.js package.json package-lock.json node_modules
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - nodejs-app.zip
+    - appspec.yml
+    - scripts/**/*
+  discard-paths: no
